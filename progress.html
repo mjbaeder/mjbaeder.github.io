@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Row 1MM</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"><!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"><!-- Google fonts-->
+    <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet"><!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/custom.css"><!-- Custom stylesheet -->
+    <link rel="shortcut icon" href="img/favicon.png"><!-- Favicon-->
+  </head>
+  <body>
+    <!-- Navbar-->
+    <div class="sticky-top" style="background-color: white;">
+      <header class="header">
+        <nav class="navbar navbar-expand-lg py-lg-0">
+          <div class="container"><a href="index.html" class="navbar-brand text-uppercase font-weight-bold">Row1MM</a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right small"><span class="text-uppercase mr-2">Menu</span><i class="fas fa-bars"></i></button>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto d-lg-flex align-items-lg-center">
+                <li class="nav-item"><a href="index.html" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">Home </a>
+                </li>
+                <li class="nav-item"><a href="dashboards.html" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">Dashboards </a>
+                </li>
+                <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4 dropdown-toggle active">Pages</a>
+                  <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n3">
+                    <a href="progress.html" class="dropdown-item small text-uppercase active">My Progress</a>
+                    <a href="hydrow.html" class="dropdown-item small text-uppercase">Why Hydrow?</a>
+                    <a href="guide.html" class="dropdown-item small text-uppercase">Beginner Guide</a>
+                    <a href="setup.html" class="dropdown-item small text-uppercase">Dashboard Setup</a>
+                  </div>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>  
+    <!-- End navbar-->
+    <section class="py-3 bg-cover bg-gray">
+      <div class="container py-3">
+        <h1 class="lined">My Personal Dashboard</h1>
+        <p class="lead my-4">Tracking my path to 1MM</p>
+      </div>
+    </section>
+    <section class="py-3">
+      <div class="container py-3">
+        <p>This is a metrics dashboard I built to track my progress. [More text coming]</p>
+      </div>
+    </section>
+    <!--DASHBOARD SECTION 
+      Main chart on the top left is the progress by day
+      4 metrics called out to the right
+      2 charts below the main chart
+
+      This uses boostrap rows and columns, with canvas elements for the ChartJS (required). 
+      The custom .css file is also necessary for a few of the elements to work properly.
+      -->      
+    <section>
+      <div class = "container"style = "border:lightgray 6px solid; width: 70vw">
+
+        <div class = "row"style ="height: 56vh;">
+          <div class = "col-9" style = "border:lightgray 6px solid;">
+              <div class = "chart-title" id="MainChartTitle">CURRENT PROGRESS</div> <!--So title of chart can be the right font and color-->
+              <div class = "chart-body">
+                <canvas id="36weeks"></canvas>
+              </div>
+          </div>
+          <div class = "col-3">
+            <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
+              <div class= "dashboard-text" id="currentWeek"></div>
+              <div class= "dashboard-label">WEEKS</div>
+            </div>
+            <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
+              <div class="progress">
+                <div class = "progress-bar bg-primary" id="percentComplete"></div>
+              </div>
+              <div class= "dashboard-label">TOTAL METERS</div>
+            </div>
+            <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
+              <div class= "dashboard-text" id="rowDays"></div>
+              <div class= "dashboard-label">DAYS ROWED</div>
+            </div>
+            <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
+              <div class= "dashboard-text" id="avgMperday"></div>
+              <div class= "dashboard-label">AVG M/SESSION</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class = "row" id="dashrow2">
+          <div class = "col-6"id="dashrow2" style = "border:lightgray 6px solid;">
+            <!-- <div class = "chart-title" id="SprintChartTitle">1K SPRINT</div> 
+            <div class = "chart-body">
+              <canvas id="sprints"></canvas>
+            </div> -->
+            <div class = "chart-title">SPI</div> <!--So title of chart can be the right font and color-->
+            <div class = "chart-body">
+              <canvas id="spi"></canvas>
+            </div>
+          </div>
+          <div class = "col-6"id="dashrow2" style = "border:lightgray 6px solid;">
+            <div class = "chart-title">AVG POWER</div> <!--So title of chart can be the right font and color-->
+            <div class = "chart-body">
+              <canvas id="power"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+    <section class="py-5"></section>
+    <footer>
+      <div class="bg-dark py-4">    
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 text-center text-lg-left mb-1 mb-lg-0">
+              <p class="small text-gray mb-0">©2022 Row1MM</p>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+              <p class="small text-gray mb-0">Template by <a href="https://bootstrapious.com" class="text-gray">Bootstrapious.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>  
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/front.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script> <!--need Chart.js for the charts-->
+    <script src="js/chart.js"></script> <!--added to load the first chart-->
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </body>
+</html>

@@ -1,0 +1,9 @@
+---------------------
+ CREDITS
+---------------------
+
+	- Bootstrap 4  -  https://getbootstrap.com
+
+	- FontAwesome  -  https://fontawesome.com/start
+
+	- Stroke Icons -  https://themes-pixeden.com/font-demos/7-stroke/

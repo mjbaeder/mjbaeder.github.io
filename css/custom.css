@@ -1,0 +1,73 @@
+#dashrow2 {
+	height: 30vh;	
+}
+
+.chart-title {
+	color: #2b90d9; /*This is the theme blue color*/
+	font-size: 1.5rem;
+
+	display: flex;
+    align-items: center; /* Vertical center alignment */
+    justify-content: center; /* Horizontal center alignment */
+	
+	width: 100%;
+	height:  15%;
+}
+
+.chart-body {
+	width: 100%;
+	height:  85%;
+}
+
+.dashboard-text {
+	background-color: white;
+	color: #2b90d9; /*This is the theme blue color*/
+	font-weight:  bolder;
+	font-size: 3.5vw;
+
+	display: flex;
+    align-items: start; /* Vertical center alignment */
+    justify-content: center; /* Horizontal center alignment */
+	
+	width: 100%;
+	height:  65%;
+}
+
+.dashboard-label{
+	background-color: white;
+	color: #2b90d9; /*This is the theme blue color*/
+	font-size: 1.5vw;
+
+	display: flex;
+    align-items: center; /* Vertical center alignment */
+    justify-content: center; /* Horizontal center alignment */
+	
+	width: 100%;
+	height:  35%;
+}
+
+.progress{
+	width: 100%;
+	height: 65%;
+	border: solid;
+	border-color: white;
+	border-width:  6px;
+}
+
+li{
+margin: 12px 0;
+}
+
+.navbar {
+	max-height: 3rem;
+  }
+
+
+/*.progress-bar {
+	color: white; 
+	width: 0%;
+	height:  65%;
+	border: solid;
+	border-color: white;
+	border-width:  6px;
+}*/
