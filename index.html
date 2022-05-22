@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="shortcut icon" href="img/favicon.png">
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navbar-->
     <div class="sticky-top" style="background-color: white;">
     <header class="header">
@@ -27,7 +27,7 @@
               <li class="nav-item"><a href="dashboards.html" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">Dashboards </a>
               </li>
               <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4 dropdown-toggle">Pages</a>
-                <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n3">
+                <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n2">
                   <a href="progress.html" class="dropdown-item small text-uppercase">My Progress</a>
                   <a href="hydrow.html" class="dropdown-item small text-uppercase">Why Hydrow?</a>
                   <a href="guide.html" class="dropdown-item small text-uppercase">Beginner Guide</a>
@@ -43,6 +43,7 @@
     </header>
   </div>  
   <!-- End navbar-->
+  <div class="wrapper flex-grow-1">
     <section style="background: url(img/water.jpg)" class="py-5 bg-cover bg-center">
       <div class="hero-overlay"></div>
       <div class="container py-5 text-white text-center">
@@ -57,6 +58,7 @@
         <p class="text-small">I started indoor rowing in March 2022 and I've committed to rowing 1 million meters (1MM) in my first 36 weeks. I've created a personal status dashboard to track my progress and improvement and help me stay committed to my goals.</p>
         <a href="progress.html" class="btn btn-outline-primary btn-sm">Read More</a>
       </div>
+    </section>
     <section class="bg-gray py-5">
       <div class="container py-5">
         <div class="row">
@@ -66,7 +68,7 @@
           </div>
           <div class="col-lg-4 mb-4 mb-lg-0"><a href="guide.html" class="d-block"><img src="img/signpost.jpg" alt="" class="img-fluid mb-4"></a>
             <h3 class="h5 mb-4"><a href="guide.html" class="text-dark">Beginner Guide</a></h3>
-            <p class="text-small">New to indoor rowing? Me too! Here's a set of resources I've found helpful as I learn more and grow.</p><a href="guide.html" class="btn btn-outline-primary btn-sm">Continue reading</a>
+            <p class="text-small">New to indoor rowing? Me too! I've compiled a list of resources and tips I've found helpful as I learn more and improve.</p><a href="guide.html" class="btn btn-outline-primary btn-sm">Continue reading</a>
           </div>
           <div class="col-lg-4"><a href="setup.html" class="d-block"><img src="img/dashboard.png" alt="" class="img-fluid mb-4"></a>
             <h3 class="h5 mb-4"><a href="setup.html" class="text-dark">Dashboard Setup</a></h3>
@@ -74,7 +76,9 @@
           </div>
         </div>
       </div>
-    </section> 
+    </section>
+    <section class="py-5"></section>
+  </div>  
     <footer>
       <div class="bg-dark py-4">    
         <div class="container">

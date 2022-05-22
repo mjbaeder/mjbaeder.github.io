@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/custom.css"><!-- Custom stylesheet -->
     <link rel="shortcut icon" href="img/favicon.png"><!-- Favicon-->
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navbar-->
     <div class="sticky-top" style="background-color: white;">
       <header class="header">
@@ -27,7 +27,7 @@
                 <li class="nav-item"><a href="dashboards.html" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">Dashboards </a>
                 </li>
                 <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4 dropdown-toggle active">Pages</a>
-                  <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n3">
+                  <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n2">
                     <a href="progress.html" class="dropdown-item small text-uppercase">My Progress</a>
                     <a href="hydrow.html" class="dropdown-item small text-uppercase">Why Hydrow?</a>
                     <a href="guide.html" class="dropdown-item small text-uppercase">Beginner Guide</a>
@@ -43,201 +43,203 @@
       </header>
     </div>  
     <!-- End navbar-->
-    <section class="py-3 bg-cover bg-gray">
-      <div class="container py-3">
-        <h1 class="lined">Dashboard Setup</h1>
-        <p class="lead my-4">A step by step guide to bootrapping your own Hydrow metrics dashboard</p>
-        <p>The sections below will take you through the required steps to set up your own Strava application, including starter dashboard code that can be customized and improved by you.</p>
-        <a href="#ongoing_use" class="btn btn-outline-primary btn-sm">Jump to Ongoing Use</a>
-      </div>
-    </section>
-    <section class="py-5">
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-lg-9">
-            <h4 class="mb-4">Set up a free Strava Account and load your Hydrow data</h4>
-            <p class="mb-4">Hydrow does not currently provide an API to access your data, but you can create a Strava account and link it to your Hydrow profile.</p>
-            <p> <strong>Steps</strong></p>
-            <ol>
-              <li>Download the Hydrow app on a phone or tablet and log in with your profile</li>
-              <li>Download the Strava app on the same device and create a new account
-                <div class="alert alert-primary" role="alert">You can also create an account via the <a href ="https://www.strava.com/">Strava site</a>, but will still need the app to connect to Hydrow</div></li>
-              <li>In the Hydrow app, navigate to "Activity". Click on any workout and click the Strava button on the bottom left:
-                <div class="media-left">
-                  <img src="img/stravabutton.jpg" alt="strava button" class="img-fluid mb-4">
-                </div>  
-                This will take you to the Strava app; sign in and give Hydrow permission to link.</li>
-              <li>To load past data, you will unfortunately need to manually click the Strava button on every workout you've already done. Future workouts will flow to Strava automatically.</li>
-            </ol>
-            <p class="mb-4">After this step you will have access to additional charts and data within the Strava app and it may meet your needs. Additional details <a href ="https://support.hydrow.com/s/article/Connect-to-Strava-1651497388359">available here.</a></p>
-            <p class="mb-4">Still want a dashboard? The simplest solution is to wait for Phase 2 of my app when you can log in, authorize Strava, and access your data. Since that isn’t yet possible (and my projects move slowly), continue reading for steps to create your own Strava app, bootstrap it with my code, and improve upon it.</p>
-          </div>
+    <div class="wrapper flex-grow-1">
+      <section class="py-3 bg-cover bg-gray">
+        <div class="container py-3">
+          <h1 class="lined">Dashboard Setup</h1>
+          <p class="lead my-4">A step by step guide to bootrapping your own Hydrow metrics dashboard</p>
+          <p>The sections below will take you through the required steps to set up your own Strava application, including starter dashboard code that can be customized and improved by you.</p>
+          <a href="#ongoing_use" class="btn btn-outline-primary btn-sm">Jump to Ongoing Use</a>
         </div>
-        <div class="row mb-n5">
-          <div class ="col-11">
-            <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
+      </section>
+      <section class="py-5">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-lg-9">
+              <h4 class="mb-4">Set up a free Strava Account and load your Hydrow data</h4>
+              <p class="mb-4">Hydrow does not currently provide an API to access your data, but you can create a Strava account and link it to your Hydrow profile.</p>
+              <p> <strong>Steps</strong></p>
+              <ol>
+                <li>Download the Hydrow app on a phone or tablet and log in with your profile</li>
+                <li>Download the Strava app on the same device and create a new account
+                  <div class="alert alert-primary" role="alert">You can also create an account via the <a href ="https://www.strava.com/">Strava site</a>, but will still need the app to connect to Hydrow</div></li>
+                <li>In the Hydrow app, navigate to "Activity". Click on any workout and click the Strava button on the bottom left:
+                  <div class="media-left">
+                    <img src="img/stravabutton.jpg" alt="strava button" class="img-fluid mb-4">
+                  </div>  
+                  This will take you to the Strava app; sign in and give Hydrow permission to link.</li>
+                <li>To load past data, you will unfortunately need to manually click the Strava button on every workout you've already done. Future workouts will flow to Strava automatically.</li>
+              </ol>
+              <p class="mb-4">After this step you will have access to additional charts and data within the Strava app and it may meet your needs. Additional details <a href ="https://support.hydrow.com/s/article/Connect-to-Strava-1651497388359">available here.</a></p>
+              <p class="mb-4">Still want a dashboard? The simplest solution is to wait for Phase 2 of my app when you can log in, authorize Strava, and access your data. Since that isn’t yet possible (and my projects move slowly), continue reading for steps to create your own Strava app, bootstrap it with my code, and improve upon it.</p>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9">
-            <h4 class="mb-4">Create a Strava app and use it to access the API</h4>
-            <p class="mb-4">Strava’s API is available through an app’s authorization keys. Set up a new Strava app through this process. 
-              <div class="alert alert-primary" role="alert">You will need a valid URL to set up the app</div></p>
-            <p> <strong>Steps</strong></p>
-            <ol>
-              <li>Navigate to <a href ="https://www.strava.com/settings/api">Strava's API settings page</a> and log in</li>
-              <li>Enter a name and description for your app</li>
-              <li>Enter a valid URL for the website. If you don’t have one, you can register a new domain name at namecheap.com or another domain registrar for as low as $5.
-                <div class="media-left">
-                  <img src="img/stravaapp.png" alt="App creation page" class="img-fluid mb-4" style="width:70%;">
-                </div>
-              </li>
-              <li>Click “Create”</li>
-              <li>You will see a Client ID, Client secret, and Refresh token for use with your app. Everything but the Client ID should be treated as a password and kept confidential.</li>
-            </ol>
+          <div class="row mb-n5">
+            <div class ="col-11">
+              <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
+            </div>
           </div>
-        </div>
-        <div class="row mb-n5">
-          <div class ="col-11">
-            <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9">
-            <h4 class="mb-4">Set up your development environment</h4>
-            <p class="mb-4">You can skip this section if you’re already set up with basic developer tools. Otherwise, you’ll need a code editor and the required software packages. There are “better” ways to do this (i.e., using virtual environments), but I’m describing the simplest approach here.</p>
-            <p> <strong>Steps</strong></p>
-            <ol>
-              <li>Download and install a code editor. I recommend <a href ="https://code.visualstudio.com/">VSCode</a>, which can be downloaded for your preferred operating system.</li>
-              <li>Install the Python extension for VSCode and the Python 3 interpreter for your operating system. VSCode provides a <a href ="https://code.visualstudio.com/docs/python/python-tutorial">tutorial here</a>; follow the steps through “Verify the Python Installation”.</li>
-              <li>Use Pip to install the following packages:
-                <ul>
-                  <li>pandas</li>
-                  <li>numpy</li>
-                  <li>requests</li>
-                  <li>python dotenv</li>
-                </ul>
-                One method is to run the command <code>pip install pandas</code> in the VSCode terminal; <a href="https://blog.openthreatresearch.com/installing_python_library_vscode">this blog</a> also has step by step instructions.
-              </li>
-            </ol>
-          </div>
-        </div>
-        <div class="row mb-n5">
-          <div class ="col-11">
-            <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9">
-            <h4 class="mb-4">Get my current code from GitHub</h4>
-            <p class="mb-4">I’ve written code to pull data from the Strava API, parse it, and display it in an HTML-based dashboard. You can get a copy of this code from GitHub for your use and can use GitHub to collaborate on improvements as well.</p>
-            <p> <strong>Steps</strong></p>
-            <ol>
-              <li>Navigate to the <a href ="#=https://github.com/jcschroeder/hydrow/releases/">GitHub repository</a> for this project</li>
-              <li>Click to download the source code zip file (or the tar.gz if you use Linux)
-                <div class="media-left">
-                  <img src="img/gitrelease.png" alt="Git release source code" class="img-fluid mb-4" style="width:70%">
-                </div>  
+          <div class="row">
+            <div class="col-lg-9">
+              <h4 class="mb-4">Create a Strava app and use it to access the API</h4>
+              <p class="mb-4">Strava’s API is available through an app’s authorization keys. Set up a new Strava app through this process. 
+                <div class="alert alert-primary" role="alert">You will need a valid URL to set up the app</div></p>
+              <p> <strong>Steps</strong></p>
+              <ol>
+                <li>Navigate to <a href ="https://www.strava.com/settings/api">Strava's API settings page</a> and log in</li>
+                <li>Enter a name and description for your app</li>
+                <li>Enter a valid URL for the website. If you don’t have one, you can register a new domain name at namecheap.com or another domain registrar for as low as $5.
+                  <div class="media-left">
+                    <img src="img/stravaapp.png" alt="App creation page" class="img-fluid mb-4" style="width:70%;">
+                  </div>
                 </li>
-              <li>Open the zip file and move the contents to the directory where you want to store them</li>
-            </ol>
+                <li>Click “Create”</li>
+                <li>You will see a Client ID, Client secret, and Refresh token for use with your app. Everything but the Client ID should be treated as a password and kept confidential.</li>
+              </ol>
+            </div>
           </div>
-        </div>
-        <div class="row mb-n5">
-          <div class ="col-11">
-            <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
+          <div class="row mb-n5">
+            <div class ="col-11">
+              <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9">
-            <h4 class="mb-4">Run the code</h4>
-            <p class="mb-4">You now have everything you need to run the dashboard.</p>
-            <p> <strong>Steps</strong></p>
-            <ol>
-              <li>Set up your .env file to keep your authentication details private
-                <ol type="a">
-                  <li>Open VSCode and select <i>File -> Open Folder</i></li>
-                  <li>Navigate to the directory where you stored the zip file contents and click “Open”</li>
-                  <li>Right click on the “API Data” folder and select “New File”</li>
-                  <li>Name the file “.env”</li>
-                  <li>Put the following text in the file, replacing the values in single quotes with your own values. 
-                    <blockquote><code>
-                      CLIENT_ID='12345'
-                      CLIENT_SECRET='abcd323230498323049823048320498230498234098'
-                      REFRESH_TOKEN='1234120918401298412098412094812049182421094'
-                    </code></blockquote>
-                    <div class="alert alert-primary" role="alert">These values are available from you <a href ="https://www.strava.com/settings/api">Strava app</a> as discussed above</div>
+          <div class="row">
+            <div class="col-lg-9">
+              <h4 class="mb-4">Set up your development environment</h4>
+              <p class="mb-4">You can skip this section if you’re already set up with basic developer tools. Otherwise, you’ll need a code editor and the required software packages. There are “better” ways to do this (i.e., using virtual environments), but I’m describing the simplest approach here.</p>
+              <p> <strong>Steps</strong></p>
+              <ol>
+                <li>Download and install a code editor. I recommend <a href ="https://code.visualstudio.com/">VSCode</a>, which can be downloaded for your preferred operating system.</li>
+                <li>Install the Python extension for VSCode and the Python 3 interpreter for your operating system. VSCode provides a <a href ="https://code.visualstudio.com/docs/python/python-tutorial">tutorial here</a>; follow the steps through “Verify the Python Installation”.</li>
+                <li>Use Pip to install the following packages:
+                  <ul>
+                    <li>pandas</li>
+                    <li>numpy</li>
+                    <li>requests</li>
+                    <li>python dotenv</li>
+                  </ul>
+                  One method is to run the command <code>pip install pandas</code> in the VSCode terminal; <a href="https://blog.openthreatresearch.com/installing_python_library_vscode">this blog</a> also has step by step instructions.
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="row mb-n5">
+            <div class ="col-11">
+              <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-9">
+              <h4 class="mb-4">Get my current code from GitHub</h4>
+              <p class="mb-4">I’ve written code to pull data from the Strava API, parse it, and display it in an HTML-based dashboard. You can get a copy of this code from GitHub for your use and can use GitHub to collaborate on improvements as well.</p>
+              <p> <strong>Steps</strong></p>
+              <ol>
+                <li>Navigate to the <a href ="#=https://github.com/jcschroeder/hydrow/releases/">GitHub repository</a> for this project</li>
+                <li>Click to download the source code zip file (or the tar.gz if you use Linux)
+                  <div class="media-left">
+                    <img src="img/gitrelease.png" alt="Git release source code" class="img-fluid mb-4" style="width:70%">
+                  </div>  
                   </li>
-                  <li>Save the file</li>
-                </ol>
-              </li>
-              <li id="localhost_setup">Open the Dashboard
-                <ol type="a">
-                  <li>Open Terminal (Mac) or the command prompt (Windows) and navigate to the directory where you stored the code (use the cd command)</li>
-                    <div class="alert alert-primary" role="alert">On Mac you can also right click on the code folder and click <i>Services -> New Terminal at Folder</i> to avoid the navigation step</div> 
-                  <li>Run the following command
-                    <blockquote><code>python3 -m http.server</code></blockquote>
-                  </li>
-                  <li>Open a web browser and enter this in the address bar
-                    <blockquote><code>http://localhost:8000/Dashboard/</code></blockquote>
-                  </li>
-                  <li>The dashboard should load with some dummy data that was included with the source code</li>
-                </ol>
-              </li>
-              <li>Run <strong>readStrava.py</strong> to get your own data
-                <ol type="a">
-                  <li>Open the readStrava.py file in VSCode</li>
-                  <li>Click the “Play” button on the top right to run the file</li>
-                  <li>Validate that the <strong>stravaActivity.json</strong> file now has data
-                    <div class="alert alert-primary" role="alert">There is currently minimal error handling, but the terminal will show any errors that occur. Some troubleshooting may be required.</div> 
-                  </li>
-                </ol>
-              </li>
-              <li>Run <strong>createSourceData.py</strong> to parse the data
-                <ol type="a">
-                  <li>Open the createSourceData.py file in VSCode </li>
-                  <li>Your Strava timezone setting may not match your Hydrow’s location. If needed, there is a section near the top of the code (currently line 44) to offset the recorded Strava timezone so dates and times are accurate. Update your code and save.</li>
-                  <li>Click the “Play” button on the top right to run the file</li>
-                  <li>Validate that the 3 JSON source files have changed</li>
-                </ol>
-              </li>
-              <li>Refresh the Dashboard
-                <ol type="a">
-                  <li>Refresh the localhost webpage and your data should appear
-                    <div class="alert alert-primary" role="alert">You may experience unexpected display issues due to the limited dataset used for the MVP version development. Please help squash these bugs.</div>
-                  </li>
-                  <li><p>If you want to change the display colors of the dashboard, you can choose up to 3 hex color codes.</p>
-                    <p>Primary color (blue): change the variable defaultcolor at the top of <strong>chart.js</strong> and the two color variables background-color and color at the top of <strong>style.css</strong></p>
-                    <p>Second and third colors: change the variables at the top of <strong>chart.js</strong></p>
+                <li>Open the zip file and move the contents to the directory where you want to store them</li>
+              </ol>
+            </div>
+          </div>
+          <div class="row mb-n5">
+            <div class ="col-11">
+              <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-9">
+              <h4 class="mb-4">Run the code</h4>
+              <p class="mb-4">You now have everything you need to run the dashboard.</p>
+              <p> <strong>Steps</strong></p>
+              <ol>
+                <li>Set up your .env file to keep your authentication details private
+                  <ol type="a">
+                    <li>Open VSCode and select <i>File -> Open Folder</i></li>
+                    <li>Navigate to the directory where you stored the zip file contents and click “Open”</li>
+                    <li>Right click on the “API Data” folder and select “New File”</li>
+                    <li>Name the file “.env”</li>
+                    <li>Put the following text in the file, replacing the values in single quotes with your own values. 
+                      <blockquote><code>
+                        CLIENT_ID='12345'
+                        CLIENT_SECRET='abcd323230498323049823048320498230498234098'
+                        REFRESH_TOKEN='1234120918401298412098412094812049182421094'
+                      </code></blockquote>
+                      <div class="alert alert-primary" role="alert">These values are available from you <a href ="https://www.strava.com/settings/api">Strava app</a> as discussed above</div>
                     </li>
-                </ol>
-              </li>
-            </ol>
+                    <li>Save the file</li>
+                  </ol>
+                </li>
+                <li id="localhost_setup">Open the Dashboard
+                  <ol type="a">
+                    <li>Open Terminal (Mac) or the command prompt (Windows) and navigate to the directory where you stored the code (use the cd command)</li>
+                      <div class="alert alert-primary" role="alert">On Mac you can also right click on the code folder and click <i>Services -> New Terminal at Folder</i> to avoid the navigation step</div> 
+                    <li>Run the following command
+                      <blockquote><code>python3 -m http.server</code></blockquote>
+                    </li>
+                    <li>Open a web browser and enter this in the address bar
+                      <blockquote><code>http://localhost:8000/Dashboard/</code></blockquote>
+                    </li>
+                    <li>The dashboard should load with some dummy data that was included with the source code</li>
+                  </ol>
+                </li>
+                <li>Run <strong>readStrava.py</strong> to get your own data
+                  <ol type="a">
+                    <li>Open the readStrava.py file in VSCode</li>
+                    <li>Click the “Play” button on the top right to run the file</li>
+                    <li>Validate that the <strong>stravaActivity.json</strong> file now has data
+                      <div class="alert alert-primary" role="alert">There is currently minimal error handling, but the terminal will show any errors that occur. Some troubleshooting may be required.</div> 
+                    </li>
+                  </ol>
+                </li>
+                <li>Run <strong>createSourceData.py</strong> to parse the data
+                  <ol type="a">
+                    <li>Open the createSourceData.py file in VSCode </li>
+                    <li>Your Strava timezone setting may not match your Hydrow’s location. If needed, there is a section near the top of the code (currently line 44) to offset the recorded Strava timezone so dates and times are accurate. Update your code and save.</li>
+                    <li>Click the “Play” button on the top right to run the file</li>
+                    <li>Validate that the 3 JSON source files have changed</li>
+                  </ol>
+                </li>
+                <li>Refresh the Dashboard
+                  <ol type="a">
+                    <li>Refresh the localhost webpage and your data should appear
+                      <div class="alert alert-primary" role="alert">You may experience unexpected display issues due to the limited dataset used for the MVP version development. Please help squash these bugs.</div>
+                    </li>
+                    <li><p>If you want to change the display colors of the dashboard, you can choose up to 3 hex color codes.</p>
+                      <p>Primary color (blue): change the variable defaultcolor at the top of <strong>chart.js</strong> and the two color variables background-color and color at the top of <strong>style.css</strong></p>
+                      <p>Second and third colors: change the variables at the top of <strong>chart.js</strong></p>
+                      </li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="row mb-n5">
+            <div class ="col-11">
+              <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
+            </div>
+          </div>
+          <div id="ongoing_use" class="row">
+            <div class="col-lg-9">
+              <h4 class="mb-4">Ongoing Use</h4>
+              <p class="mb-4">The preceding steps are a one-time pull from the API. To update regularly, follow these steps.</p>
+              <p> <strong>Steps</strong></p>
+              <ol>
+                <li>Run <strong>readStrava.py</strong></li>
+                <li>Run <strong>createSourceData.py</strong></li>
+                <div class="alert alert-primary" role="alert">One easy future improvement will be to set this up as a daily cron job</div>
+                <li>Ensure your localhost server is running in your code directory (<a href="#localhost_setup">see above</a>)</li>
+                <li>Refresh the dashboard at http://localhost:8000/Dashboard/
+                </li>
+                <li>Make improvements to the code to add new data and request to merge them in GitHub!</li>
+              </ol>
+            </div>
           </div>
         </div>
-        <div class="row mb-n5">
-          <div class ="col-11">
-            <img src="img/hatchetoar.jpg" alt="" class="img-fluid mb-4" style="width:100%">
-          </div>
-        </div>
-        <div id="ongoing_use" class="row">
-          <div class="col-lg-9">
-            <h4 class="mb-4">Ongoing Use</h4>
-            <p class="mb-4">The preceding steps are a one-time pull from the API. To update regularly, follow these steps.</p>
-            <p> <strong>Steps</strong></p>
-            <ol>
-              <li>Run <strong>readStrava.py</strong></li>
-              <li>Run <strong>createSourceData.py</strong></li>
-              <div class="alert alert-primary" role="alert">One easy future improvement will be to set this up as a daily cron job</div>
-              <li>Ensure your localhost server is running in your code directory (<a href="#localhost_setup">see above</a>)</li>
-              <li>Refresh the dashboard at http://localhost:8000/Dashboard/
-              </li>
-              <li>Make improvements to the code to add new data and request to merge them in GitHub!</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
     <footer>
       <div class="bg-dark py-4">    
         <div class="container">

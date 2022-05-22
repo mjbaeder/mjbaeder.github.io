@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/custom.css"><!-- Custom stylesheet -->
     <link rel="shortcut icon" href="img/favicon.png"><!-- Favicon-->
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navbar-->
     <div class="sticky-top" style="background-color: white;">
       <header class="header">
@@ -27,7 +27,7 @@
                 <li class="nav-item"><a href="dashboards.html" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">Dashboards </a>
                 </li>
                 <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4 dropdown-toggle active">Pages</a>
-                  <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n3">
+                  <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n2">
                     <a href="progress.html" class="dropdown-item small text-uppercase">My Progress</a>
                     <a href="hydrow.html" class="dropdown-item small text-uppercase">Why Hydrow?</a>
                     <a href="guide.html" class="dropdown-item small text-uppercase active">Beginner Guide</a>
@@ -43,18 +43,20 @@
       </header>
     </div>  
     <!-- End navbar-->
-    <section class="py-3 bg-cover bg-gray">
-      <div class="container py-3">
-        <h1 class="lined">Beginner Guide</h1>
-        <p class="lead my-4">These are resources I've found helpful as I've learned more about indoor rowing</p>
-      </div>
-    </section>
-    <section style="background: url(img/water.jpg)" class="py-5 bg-cover bg-center">
-      <div class="container py-5 text-white text-center">
-        <p class="text-shadow lead my-4"><strong>This page is under construction</strong></p>
-      </div>
-    </section>
-    <section class="py-5"></section>
+    <div class="wrapper flex-grow-1">
+      <section class="py-3 bg-cover bg-gray">
+        <div class="container py-3">
+          <h1 class="lined">Beginner Guide</h1>
+          <p class="lead my-4">These are resources I've found helpful as I've learned more about indoor rowing</p>
+        </div>
+      </section>
+      <section style="background: url(img/water.jpg)" class="py-5 bg-cover bg-center">
+        <div class="container py-5 text-white text-center">
+          <p class="text-shadow lead my-4"><strong>This page is under construction</strong></p>
+        </div>
+      </section>
+      <section class="py-5"></section>
+    </div>
     <footer>
       <div class="bg-dark py-4">    
         <div class="container">

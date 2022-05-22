@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/custom.css"><!-- Custom stylesheet -->
     <link rel="shortcut icon" href="img/favicon.png"><!-- Favicon-->
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navbar-->
     <div class="sticky-top" style="background-color: white;">
       <header class="header">
@@ -27,7 +27,7 @@
                 <li class="nav-item"><a href="dashboards.html" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">Dashboards </a>
                 </li>
                 <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4 dropdown-toggle active">Pages</a>
-                  <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n3">
+                  <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu mt-n2">
                     <a href="progress.html" class="dropdown-item small text-uppercase active">My Progress</a>
                     <a href="hydrow.html" class="dropdown-item small text-uppercase">Why Hydrow?</a>
                     <a href="guide.html" class="dropdown-item small text-uppercase">Beginner Guide</a>
@@ -43,78 +43,80 @@
       </header>
     </div>  
     <!-- End navbar-->
-    <section class="py-3 bg-cover bg-gray">
-      <div class="container py-3">
-        <h1 class="lined">My Personal Dashboard</h1>
-        <p class="lead my-4">Tracking my path to 1MM</p>
-      </div>
-    </section>
-    <section class="py-3">
-      <div class="container py-3">
-        <p>This is a metrics dashboard I built to track my progress. [More text coming]</p>
-      </div>
-    </section>
-    <!--DASHBOARD SECTION 
-      Main chart on the top left is the progress by day
-      4 metrics called out to the right
-      2 charts below the main chart
+    <div class="wrapper flex-grow-1">
+      <section class="py-3 bg-cover bg-gray">
+        <div class="container py-3">
+          <h1 class="lined">My Personal Dashboard</h1>
+          <p class="lead my-4">Tracking my path to 1MM</p>
+        </div>
+      </section>
+      <section class="py-3">
+        <div class="container py-3">
+          <p>This is a metrics dashboard I built to track my progress. [More text coming]</p>
+        </div>
+      </section>
+      <!--DASHBOARD SECTION 
+        Main chart on the top left is the progress by day
+        4 metrics called out to the right
+        2 charts below the main chart
 
-      This uses boostrap rows and columns, with canvas elements for the ChartJS (required). 
-      The custom .css file is also necessary for a few of the elements to work properly.
-      -->      
-    <section>
-      <div class = "container"style = "border:lightgray 6px solid; width: 70vw">
+        This uses boostrap rows and columns, with canvas elements for the ChartJS (required). 
+        The custom .css file is also necessary for a few of the elements to work properly.
+        -->      
+      <section>
+        <div class = "container"style = "border:lightgray 6px solid; width: 70vw">
 
-        <div class = "row"style ="height: 56vh;">
-          <div class = "col-9" style = "border:lightgray 6px solid;">
-              <div class = "chart-title" id="MainChartTitle">CURRENT PROGRESS</div> <!--So title of chart can be the right font and color-->
+          <div class = "row"style ="height: 56vh;">
+            <div class = "col-9" style = "border:lightgray 6px solid;">
+                <div class = "chart-title" id="MainChartTitle">CURRENT PROGRESS</div> <!--So title of chart can be the right font and color-->
+                <div class = "chart-body">
+                  <canvas id="36weeks"></canvas>
+                </div>
+            </div>
+            <div class = "col-3">
+              <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
+                <div class= "dashboard-text" id="currentWeek"></div>
+                <div class= "dashboard-label">WEEKS</div>
+              </div>
+              <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
+                <div class="progress">
+                  <div class = "progress-bar bg-primary" id="percentComplete"></div>
+                </div>
+                <div class= "dashboard-label">TOTAL METERS</div>
+              </div>
+              <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
+                <div class= "dashboard-text" id="rowDays"></div>
+                <div class= "dashboard-label">DAYS ROWED</div>
+              </div>
+              <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
+                <div class= "dashboard-text" id="avgMperday"></div>
+                <div class= "dashboard-label">AVG M/SESSION</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class = "row" id="dashrow2">
+            <div class = "col-6"id="dashrow2" style = "border:lightgray 6px solid;">
+              <!-- <div class = "chart-title" id="SprintChartTitle">1K SPRINT</div> 
               <div class = "chart-body">
-                <canvas id="36weeks"></canvas>
+                <canvas id="sprints"></canvas>
+              </div> -->
+              <div class = "chart-title">SPI</div> <!--So title of chart can be the right font and color-->
+              <div class = "chart-body">
+                <canvas id="spi"></canvas>
               </div>
-          </div>
-          <div class = "col-3">
-            <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
-              <div class= "dashboard-text" id="currentWeek"></div>
-              <div class= "dashboard-label">WEEKS</div>
             </div>
-            <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
-              <div class="progress">
-                <div class = "progress-bar bg-primary" id="percentComplete"></div>
+            <div class = "col-6"id="dashrow2" style = "border:lightgray 6px solid;">
+              <div class = "chart-title">AVG POWER</div> <!--So title of chart can be the right font and color-->
+              <div class = "chart-body">
+                <canvas id="power"></canvas>
               </div>
-              <div class= "dashboard-label">TOTAL METERS</div>
-            </div>
-            <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
-              <div class= "dashboard-text" id="rowDays"></div>
-              <div class= "dashboard-label">DAYS ROWED</div>
-            </div>
-            <div class = "row"style = "border:lightgray 6px solid;height: 14vh;">
-              <div class= "dashboard-text" id="avgMperday"></div>
-              <div class= "dashboard-label">AVG M/SESSION</div>
             </div>
           </div>
         </div>
-        
-        <div class = "row" id="dashrow2">
-          <div class = "col-6"id="dashrow2" style = "border:lightgray 6px solid;">
-            <!-- <div class = "chart-title" id="SprintChartTitle">1K SPRINT</div> 
-            <div class = "chart-body">
-              <canvas id="sprints"></canvas>
-            </div> -->
-            <div class = "chart-title">SPI</div> <!--So title of chart can be the right font and color-->
-            <div class = "chart-body">
-              <canvas id="spi"></canvas>
-            </div>
-          </div>
-          <div class = "col-6"id="dashrow2" style = "border:lightgray 6px solid;">
-            <div class = "chart-title">AVG POWER</div> <!--So title of chart can be the right font and color-->
-            <div class = "chart-body">
-              <canvas id="power"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>  
-    <section class="py-5"></section>
+      </section>  
+      <section class="py-5"></section>
+    </div>
     <footer>
       <div class="bg-dark py-4">    
         <div class="container">
