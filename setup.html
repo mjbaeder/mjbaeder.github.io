@@ -165,8 +165,8 @@
                     <li>Name the file “.env”</li>
                     <li>Put the following text in the file, replacing the values in single quotes with your own values. 
                       <blockquote><code>
-                        CLIENT_ID='12345'
-                        CLIENT_SECRET='abcd323230498323049823048320498230498234098'
+                        CLIENT_ID='12345'<br>
+                        CLIENT_SECRET='abcd323230498323049823048320498230498234098'<br>
                         REFRESH_TOKEN='1234120918401298412098412094812049182421094'
                       </code></blockquote>
                       <div class="alert alert-primary" role="alert">These values are available from you <a href ="https://www.strava.com/settings/api">Strava app</a> as discussed above</div>
@@ -185,6 +185,20 @@
                       <blockquote><code>http://localhost:8000/Dashboard/</code></blockquote>
                     </li>
                     <li>The dashboard should load with some dummy data that was included with the source code</li>
+                  </ol>
+                </li>
+                <li>Approve your API calls to read your activity data 
+                  <ol type="a">
+                    <li>Insert your client ID into this URL and past into a browser
+                      <blockquote><code>https://www.strava.com/oauth/authorize?client_id=[INSERT YOUR CLIENT ID]&response_type=code&redirect_uri=http://localhost&approval_prompt=force&scope=activity:read_all</code></blockquote>
+                    </li>
+                    <li>Click "Authorize" to give yourself permission to read activities</li>
+                    <li>You will be redirected to a new URL (your browser will likely fail to load). Copy the code from this URL: 
+                      <blockquote>//localhost/?state=&code=<code>1d6f20a264d0fc8a0b286fc0cd9e78bb19645499</code>&scope=read,activity:read_all</blockquote>
+                    </li>
+                    <li>Paste this authorization code into the "code" variable in the <strong>initialAuth.py</strong> file on row 37</li>
+                    <div class="alert alert-primary" role="alert">Row 37 should look like this, except with your authorization:<br> code = '1d6f20a264d0fc8a0b286fc0cd9e78bb19645499'</div> 
+                    <li>Run <strong>initialAuth.py</strong>. Your refresh token will be updated to the one with authorization.</li>
                   </ol>
                 </li>
                 <li>Run <strong>readStrava.py</strong> to get your own data
